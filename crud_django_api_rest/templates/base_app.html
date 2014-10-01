@@ -1,0 +1,32 @@
+{% load static from staticfiles %}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> LiveMusic </title>
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" href="{% static "icomoon/style.css" %}">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<a href="https://github.com/CristhGunners/"><span class="icon-github-alt"></span></a>
+			<a href="https://twitter.com/CristhGunners"><span class="icon-twitter"></span></a>
+		</div>
+		<h1><a href="/"> Live Music </a></h1>
+		<div id="add">
+			<a href="{% url 'musico_nuevo' %}"><span class="icon-user-add"></span></a>
+			<a href="{% url 'album_nuevo' %}"><span class="icon-feather"></span></a>
+			<a href="{% url 'musicos' %}"><span class="icon-group"></span></a>
+		</div>
+	</header>
+	<section>
+		{% block content %}{% endblock %}
+	</section>
+	<!--<footer>
+		<h2> LiveMusic </h3>
+		<h3><a href="#"><span class="icon-twitter"></span> @CristhGunners </h2></a>
+	</footer>-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base_app.html '%}
+
+{% block content %}
+	<section id="all-album">
+		{% for album in all_album %}
+			<article>
+				<figure>
+					<a href="{% url 'album_detalle' album.pk %}"><img src="{{album.get_thumb_image_url}}"/></a>
+				</figure>
+				<h2>
+					<a href="{% url 'musico_detalle' album.musico.pk %}">
+						<span class="icon-user"></span> {{album.musico.nombre}}
+					</a>
+				</h2>
+				<h2>
+					<a href="{% url 'album_detalle' album.pk %}">
+						<span class="icon-music"></span> {{album.titulo}}
+					</a>
+				</h2>
+				<h3>
+					<span class="icon-tag"></span> {{album.musico.get_estilo_display}}
+				</h3>
+			</article>
+		{% empty %}
+			<div class="empty">
+				<label> No Hay Discos </label>
+				<span class="icon-book"></span>
+			</div>
+		{% endfor %}
+	</section>
+{% endblock %}

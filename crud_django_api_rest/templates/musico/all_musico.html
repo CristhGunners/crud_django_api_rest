@@ -1,0 +1,24 @@
+{% extends 'base_app.html '%}
+
+{% block content %}
+	<section id="all-album">
+		{% for musico in all_musico %}
+			<article>
+				<figure>
+					<a href="{% url 'musico_detalle' musico.pk %}"><img src="{{musico.get_thumb_image_url}}"/></a>
+				</figure>
+				<h2>
+					<a href="{% url 'musico_detalle' musico.pk %}">
+						<span class="icon-user"></span> {{musico.nombre}}
+					</a>
+					</h2>
+				<h3><span class="icon-tag"></span> {{musico.get_estilo_display}}</h3>
+			</article>
+		{% empty %}
+			<div>
+				<label> No Hay Musicos </label>
+				<span class="icon-book"></span>
+			</div>
+		{% endfor %}
+	</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base_app.html '%}
+
+{% block content %}
+	<section id="all-album">
+		<article class="detalle musico">
+			<figure>
+				<img src="{{musico.get_thumb_image_url}}"/>
+			</figure>
+			<h2><span class="icon-user"></span> {{musico.nombre}}</h2>
+			<h3><span class="icon-tag"></span> {{musico.get_estilo_display}}</h3>
+			<div class="crud">
+				<a href="{% url 'musico_modificar' musico.pk %}"><span class="icon-rotate-right"></span></a>
+				<a href="{% url 'musico_eliminar' musico.pk %}"><span class="icon-trash-o"></span></a>
+			</div>
+		</article>
+		{% for album in all_album %}
+			<article>
+				<figure>
+					<a href="{% url 'album_detalle' album.pk %}"><img src="{{album.get_thumb_image_url}}"/></a>
+				</figure>
+				<h2>
+					<a href="{% url 'musico_detalle' album.musico.pk %}">
+						<span class="icon-user"></span> {{album.musico.nombre}}
+					</a>
+				</h2>
+				<h2>
+					<a href="{% url 'album_detalle' album.pk %}">
+						<span class="icon-music"></span> {{album.titulo}}
+					</a>
+				</h2>
+				<h3><span class="icon-tag"></span> {{album.musico.get_estilo_display}}</h3>
+			</article>
+		{% empty %}
+			<div class="empty">
+				<label> No Hay Discos </label>
+				<span class="icon-folder"></span>
+			</div>
+		{% endfor %}
+	</section>
+{% endblock %}

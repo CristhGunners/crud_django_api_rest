@@ -1,0 +1,201 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Autour+One);
+
+
+* {
+	outline: none;
+}
+
+body {
+	background: #E8E8E8;
+	color: #444;
+	font-family: 'Inconsolata', ;
+	font-size: 16px;
+	transition: font-size 1s;
+	margin:0;
+}
+
+header {
+	background: #444;
+	box-shadow: 0 5px 0 #DD4F24;
+	color: #FFF;
+	overflow: hidden;
+	padding: .5em;
+	position: relative;
+	z-index: 2;
+}
+
+header h1 {
+	font-size: 2.7em;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Autour One', cursive;
+}
+
+header div.logo {
+	float: left;
+	font-size: 1.5em;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+header div.logo a {
+	color: #eee;
+	text-decoration: none;
+	margin: 0 0.3em;
+}
+
+header div#add {
+	float: right;
+	font-size: 1.5em;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+header div#add a , header h1 a{
+	color: #eee;
+	text-decoration: none;
+}
+
+header div#add a {
+	margin: 0 0.5em;
+}
+
+footer {
+	background: #DD4F24;
+	color: rgba(255, 255, 255, 0.5);
+	padding: 1em 0;
+	text-align: center;
+	width: 100%;
+	font-family: 'Autour One', cursive;
+}
+
+footer h3 {
+	font-size: 1em;
+}
+
+footer h3 a {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+section#all-album {
+	width: 100%;
+	text-align: center;
+}
+
+section#all-album article {
+	width: 15%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 1em;
+	border: 4px solid #333332;
+	background: white;
+	border-radius: 7px;
+	min-width: 150px;
+}
+
+section#all-album article figure {
+	width: 100%;
+	min-width: 150px;
+	margin: 0 auto;
+	border-bottom: 4px solid #333332;
+}
+
+section#all-album article figure img {
+	width: 100%;
+	display: block;
+}
+
+section#all-album article h2 {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+section#all-album article h3 {
+	font-size: 1.3em;
+	text-align: center;
+}
+
+/* Form */
+
+section#all-album article.form {
+	width: 30%;
+}
+
+section#all-album article.form label {
+	display: block;
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+section#all-album article.form input[type='text'] {
+	font-size: 1.3em;
+	border: 2px solid #333332;
+	padding: 0.2em;
+}
+
+section#all-album article.form button[type='submit'] {
+	background: #333332;
+	color: #eee;
+	padding: 0.4em;
+	font-size: 1.3em;
+	border: 0;
+	border-radius: 0.5em;
+	margin: 0.5em auto;
+	cursor: pointer;
+}
+
+section#all-album article.form select {
+	border: 2px solid #333332;
+	padding: 0.3em;
+	font-size: 1.3em;
+	color: #333332;
+}
+
+/* CRUD */
+
+section#all-album article.detalle div.crud {
+	border-top:2px solid #333332;
+	font-size: 1.5em;
+	padding: 0.5em;
+}
+
+section#all-album article.detalle div.crud a {
+	color: #333332;
+	text-decoration: none;
+	margin: 0 1em;
+}
+
+/* Div Empty */
+
+div.empty {
+	text-align: center;
+	font-size: 2em;
+	color: #333332;
+	font-weight: bold;
+
+}
+
+div.empty label {
+	display: block;
+	margin: 1em auto;
+	font-family: 'Autour One', cursive;
+}
+
+/* Musico */
+
+section#all-album article.detalle.musico {
+	display: block;
+	margin: 1em auto;
+}
+
+/* Enlaces */
+
+h2 a , h3 a{
+	text-decoration: none;
+	color: #333332;
+}

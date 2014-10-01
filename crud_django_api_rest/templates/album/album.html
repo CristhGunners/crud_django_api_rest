@@ -1,0 +1,19 @@
+{% extends 'base_app.html '%}
+
+{% block content %}
+	<section id="all-album">
+		<article class="detalle">
+			<figure>
+				<img src="{{album.get_thumb_image_url}}"/>
+			</figure>
+			<h2><a href="{% url 'musico_detalle' album.musico.pk%}"><span class="icon-user"></span> {{album.musico.nombre}}</a></h2>
+			<h2><span class="icon-music"></span> {{album.titulo}}</h2>
+			<h3><span class="icon-tag"></span> {{album.musico.get_estilo_display}}</h3>
+			<h3><span class="icon-calendar"></span> {{album.year}}</h3>
+			<div class="crud">
+				<a href="{% url 'album_modificar' album.id %}"><span class="icon-rotate-right"></span></a>
+				<a href="{% url 'album_eliminar' album.id %}"><span class="icon-trash-o"></span></a>
+			</div>
+		</article>
+	</section>
+{% endblock %}

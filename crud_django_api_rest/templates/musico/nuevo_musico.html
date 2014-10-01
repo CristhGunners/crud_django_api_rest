@@ -1,0 +1,13 @@
+{% extends 'base_app.html '%}
+
+{% block content %}
+	<section id="all-album">
+		<article class="form">
+		<form method="POST" enctype="multipart/form-data" autocomplete="off">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit"><span class="icon-check"></span> Guardar </button>
+		</form>
+		</article>
+	</section>
+{% endblock %}
