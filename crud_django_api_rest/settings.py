@@ -45,8 +45,8 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    'apps.musico',
     'apps.album',
+    'apps.musico',
 )
 
 SITE_ID = 1
@@ -96,16 +96,28 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR , 'crud_django_api_rest/media')
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media/')
 
 STATIC_URL = '/static/'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    #'django.template.loaders.eggs.Loader',
+)
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'crud_django_api_rest/static'),
+    #os.path.join(BASE_DIR, 'crud_django_api_rest/static'),
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'crud_django_api_rest/templates'),
+    #os.path.join(BASE_DIR, 'crud_django_api_rest/templates'),
 )
 
 IMG_SIZE_THUMB  = (216, 196) #Foto - Album - Lista
